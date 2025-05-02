@@ -1,0 +1,215 @@
+# Доказательства 16 основных логических выводимостей
+
+
+## 1. $ A, B \vdash A \& B $
+1. $ A $ — предпосылка ($ A \in \Gamma $, свойство 4).  
+2. $ B $ — предпосылка ($ B \in \Gamma $, свойство 4).  
+3. $ A \supset (B \supset (A \& B)) $ — аксиома A5.  
+4. $ B \supset (A \& B) $ — из 1, 3 по MP.  
+5. $ A \& B $ — из 2, 4 по MP.  
+
+---
+
+## 2. $ A, B \vdash A \vee B $
+1. $ A $ — предпосылка.  
+2. $ A \supset (A \vee B) $ — аксиома A6.  
+3. $ A \vee B $ — из 1, 2 по MP.  
+
+---
+
+## 3. $ A, B \vdash A \supset B $
+По теореме о дедукции: нужно показать, что $ A, B \vdash B $, тогда $ A \vdash A \supset B $.  
+1. $ B $ — предпосылка ($ B \in \Gamma, A $, свойство 4).  
+По теореме о дедукции: $ A \vdash A \supset B $.  
+По свойству 1: $ A, B \vdash A \supset B $.  
+
+---
+
+## 4. $ A, B \vdash A \equiv B $
+1. $ A, B \vdash A \supset B $ — из вывода 3.  
+2. $ A, B \vdash B \supset A $ — аналогично выводу 3, меняем местами $ A $ и $ B $.  
+3. $ (A \supset B) \supset ((B \supset A) \supset (A \equiv B)) $ — аксиома A13.  
+4. $ (B \supset A) \supset (A \equiv B) $ — из 1, 3 по MP.  
+5. $ A \equiv B $ — из 2, 4 по MP.  
+
+---
+
+## 5. $ A, \bar{B} \vdash \overline{A \& B} $
+По теореме о дедукции: нужно показать $ A, \bar{B}, A \& B \vdash \text{противоречие} $, тогда $ A, \bar{B} \vdash \overline{A \& B} $.  
+1. $ A \& B $ — предположение.  
+2. $ A $ — из 1 по аксиоме A3 и MP.  
+3. $ B $ — из 1 по аксиоме A4 и MP.  
+4. $ \bar{B} $ — предпосылка.  
+5. $ B \supset \bar{B} $ — по теореме о дедукции из 3, 4.  
+6. $ \vdash B \supset \bar{B} $— из примера 2 (стр. 16).  
+7. $ B \supset \bar{B} \vdash \bar{B} $ — из 6 по свойство 3.  
+8. $ \bar{B} \vdash \bar{B} $ — тривиально (свойство 4).  
+Противоречие: $ B $ (из 3) и $ \bar{B} $ (из 4).  
+По теореме о дедукции: $ A, \bar{B} \vdash \overline{A \& B} $.  
+
+---
+
+## 6. $ A, \bar{B} \vdash A \vee B $
+1. $ A $ — предпосылка.  
+2. $ A \supset (A \vee B) $ — аксиома A6.  
+3. $ A \vee B $ — из 1, 2 по MP.  
+
+---
+
+## 7. $ A, \bar{B} \vdash \overline{A \supset B} $
+По теореме о дедукции: нужно показать $ A, \bar{B}, A \supset B \vdash \text{противоречие} $.  
+1. $ A \supset B $ — предположение.  
+2. $ A $ — предпосылка.  
+3. $ B $ — из 1, 2 по MP.  
+4. $ \bar{B} $ — предпосылка.  
+Противоречие: $ B $ и $ \bar{B} $.  
+По теореме о дедукции: $ A, \bar{B} \vdash \overline{A \supset B} $.  
+
+---
+
+## 8. $ A, \bar{B} \vdash \overline{A \equiv B} $
+По теореме о дедукции: нужно показать $ A, \bar{B}, A \equiv B \vdash \text{противоречие} $.  
+1. $ A \equiv B $ — предположение.  
+2. $ (A \equiv B) \supset (A \supset B) $ — аксиома A11.  
+3. $ A \supset B $ — из 1, 2 по MP.  
+4. $ A, \bar{B} \vdash \overline{A \supset B} $ — из вывода 7.  
+5. $ A \supset B \vdash \overline{A \supset B} $— из 3, 4 по свойство 1.  
+Противоречие: $ A \supset B $ и $ \overline{A \supset B} $.  
+По теореме о дедукции: $ A, \bar{B} \vdash \overline{A \equiv B} $.  
+
+---
+
+## 9. $ \bar{A}, B \vdash \overline{A \& B} $
+По теореме о дедукции: нужно показать $ \bar{A}, B, A \& B \vdash \text{противоречие} $.  
+1. $ A \& B $ — предположение.  
+2. $ A $ — из 1 по аксиоме A3 и MP.  
+3. $ \bar{A} $ — предпосылка.  
+Противоречие: $ A $ и $ \bar{A} $.  
+По теореме о дедукции: $ \bar{A}, B \vdash \overline{A \& B} $.  
+
+---
+
+## 10. $ \bar{A}, B \vdash A \vee B $
+1. $ B $ — предпосылка.  
+2. $ B \supset (A \vee B) $ — аксиома A7.  
+3. $ A \vee B $ — из 1, 2 по MP.  
+
+---
+
+## 11. $ \bar{A}, B \vdash A \supset B $
+По теореме о дедукции: нужно показать $ \bar{A}, B, A \vdash B $.  
+1. $ B $ — предпосылка ($ B \in \Gamma $, свойство 4).  
+По теореме о дедукции: $ \bar{A}, B \vdash A \supset B $.  
+
+---
+
+## 12. $ \bar{A}, B \vdash \overline{A \equiv B} $
+По теореме о дедукции: нужно показать $ \bar{A}, B, A \equiv B \vdash \text{противоречие} $.  
+1. $ A \equiv B $ — предположение.  
+2. $ (A \equiv B) \supset (B \supset A) $ — аксиома A12.  
+3. $ B \supset A $ — из 1, 2 по MP.  
+4. $ B $ — предпосылка.  
+5. $ A $ — из 3, 4 по MP.  
+6. $ \bar{A} $ — предпосылка.  
+Противоречие: $ A $ и $ \bar{A} $.  
+По теореме о дедукции: $ \bar{A}, B \vdash \overline{A \equiv B} $.  
+
+---
+
+## 13. $ \bar{A}, \bar{B} \vdash \overline{A \& B} $
+По теореме о дедукции: нужно показать $ \bar{A}, \bar{B}, A \& B \vdash \text{противоречие} $.  
+1. $ A \& B $ — предположение.  
+2. $ A $ — из 1 по аксиоме A3 и MP.  
+3. $ \bar{A} $ — предпосылка.  
+Противоречие: $ A $ и $ \bar{A} $.  
+По теореме о дедукции: $ \bar{A}, \bar{B} \vdash \overline{A \& B} $.  
+
+---
+
+## 14. $ \bar{A}, \bar{B} \vdash \overline{A \vee B} $
+По теореме о дедукции: нужно показать $ \bar{A}, \bar{B}, A \vee B \vdash \text{противоречие} $.  
+1. $ A \vee B $ — предположение.  
+2. $ (A \supset \bar{A}) \supset ((\bar{A} \supset \bar{B}) \supset \overline{A \vee B}) $ — аксиома A8 с подстановкой $ \bar{A} $ вместо $ C $.  
+3. $ \vdash A \supset \bar{A} $ — из примера 2 (стр. 16).  
+4. $ A \supset \bar{A} $ — из 3 по свойство 3.  
+5. $ (\bar{A} \supset \bar{B}) \supset \overline{A \vee B} $ — из 2, 4 по MP.  
+6. $ \bar{A} \vdash \bar{B} \supset \bar{A} $ — аксиома A1 с подстановкой, по свойству 1.  
+7. $ \bar{A}, \bar{B} \vdash \bar{B} \supset \bar{A} $ — из 6 по свойство 1.  
+8. $ \bar{B} $ — предпосылка.  
+9. $ \bar{A} $ — из 7, 8 по MP.  
+10. $ \bar{A} \supset \bar{B} \vdash \overline{A \vee B} $ — из 5 по свойство 1.  
+11. $ \bar{A}, \bar{B} \vdash \bar{A} \supset \bar{B} $ — тривиально (свойство 4).  
+12. $ \overline{A \vee B} $ — из 10, 11 по MP.  
+Противоречие: $ A \vee B $ и $ \overline{A \vee B} $.  
+По теореме о дедукции: $ \bar{A}, \bar{B} \vdash \overline{A \vee B} $.  
+
+---
+
+## 15. $ \bar{A}, \bar{B} \vdash A \supset B $
+По теореме о дедукции: нужно показать $ \bar{A}, \bar{B}, A \vdash B $.  
+1. $ \bar{A} $ — предпосылка.  
+2. $ \bar{A} \vdash \bar{A} $— тривиально (свойство 4).  
+По теореме о дедукции: $ \bar{A}, \bar{B} \vdash A \supset B $.  
+
+---
+
+## 16. $( \bar{A}, \bar{B} \vdash A \equiv B )$
+
+По теореме о дедукции: нужно показать, что $( \bar{A}, \bar{B} \vdash A \supset B )$ и $( \bar{A}, \bar{B} \vdash B \supset A )$, затем использовать аксиому A13.
+
+### Шаг 1: Доказать $( \bar{A}, \bar{B} \vdash A \supset B )$
+
+Это уже доказано в выводе 15:
+
+
+
+
+
+$( \bar{A} \vdash \bar{A} )$ — тривиально.
+
+
+
+По теореме о дедукции: $( \bar{A}, \bar{B} \vdash A \supset B )$.
+
+### Шаг 2: Доказать $( \bar{A}, \bar{B} \vdash B \supset A )$
+
+По теореме о дедукции: нужно показать $( \bar{A}, \bar{B}, B \vdash A )$.
+
+
+
+
+
+$( \bar{B} )$ — предпосылка.
+
+
+
+$( \bar{B} \vdash \bar{B} )$ — тривиально (свойство 4).
+По теореме о дедукции: $( \bar{A}, \bar{B} \vdash B \supset A )$.
+
+### Шаг 3: Получить $( A \equiv B )$
+
+
+
+
+
+1. $( \bar{A}, \bar{B} \vdash A \supset B )$ — из шага 1.
+
+
+
+2. $( \bar{A}, \bar{B} \vdash B \supset A )$ — из шага 2.
+
+
+
+3. $( (A \supset B) \supset ((B \supset A) \supset (A \equiv B)) )$ — аксиома A13.
+
+
+
+4. $( \bar{A}, \bar{B} \vdash (A \supset B) \supset ((B \supset A) \supset (A \equiv B)) )$ — из 3 по свойству 3.
+
+
+
+5. $( \bar{A}, \bar{B} \vdash (B \supset A) \supset (A \equiv B) )$ — из 1, 4 по MP.
+
+
+
+6. $( \bar{A}, \bar{B} \vdash A \equiv B )$ — из 2, 5 по MP.
